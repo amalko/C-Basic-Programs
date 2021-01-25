@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsecutiveNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var num = new List<int>();
+
+            Console.Write("enter few numbers separated by '-' :");
+            var numstr = Console.ReadLine();
+            var str = numstr.Split('-');
+
+            foreach(var n in str)
+            {
+                var number = Convert.ToInt32(n);
+                num.Add(number);
+            }
+
+            for (int i = 0; i < num.Count-1; i++ )
+            {
+                
+                if ((num[i+1] == (num[i] +1)) || (num[i+1] == (num[i] -1)))
+                {
+                    if (i == num.Count-2)
+                        Console.WriteLine("Consecutive ");
+                    
+                }
+
+                else
+                {
+                    Console.WriteLine("Not consecutive");
+                    break;
+                }
+
+                
+            }
+
+        }
+    }
+}
